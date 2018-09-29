@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/spikerlabs/scala-bdd-seed.g8.svg?branch=master)](https://travis-ci.org/spikerlabs/scala-bdd-seed.g8)
+
 A [Giter8][g8] template for Scala project for test driven development.
 
 Standard scala sbt project with cucumber and scalatest setup.
