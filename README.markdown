@@ -2,7 +2,7 @@
 
 A [Giter8][g8] template for Scala project for test driven development.
 
-Standard scala sbt project with cucumber and scalatest setup.
+Standard scala sbt project with cucumber, scalatest and scalacheck setup.
 
 Usage: ```sbt new spikerlabs/scala-bdd-seed.g8```
 
