@@ -12,8 +12,9 @@ lazy val root = (project in file(".")).
   )
   // test dependencies
   .settings(
-  libraryDependencies ++= cucumber,
-  libraryDependencies += scalaTest,
+    libraryDependencies ++= cucumber,
+    libraryDependencies += scalaTest,
+    libraryDependencies += scalaCheck,
     CucumberPlugin.monochrome := false,
     CucumberPlugin.glue := "classpath:steps",
     CucumberPlugin.features := List("classpath:features")
