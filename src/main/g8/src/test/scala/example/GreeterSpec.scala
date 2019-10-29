@@ -6,6 +6,10 @@ import org.scalatest.prop.PropertyChecks
 
 class GreeterSpec extends FlatSpec with Matchers with PropertyChecks {
 
+  it should "green genericly without a name" in {
+    Greeter.greet shouldBe "Hello!"
+  }
+
   it should "greet by name" in {
     Greeter.greet("Bob") shouldBe "Hello, Bob!"
   }
