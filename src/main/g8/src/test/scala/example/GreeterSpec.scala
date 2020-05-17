@@ -1,10 +1,11 @@
 package example
 
 import org.scalacheck.Gen
-import org.scalatest.{FlatSpec, Matchers}
-import org.scalatest.prop.PropertyChecks
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 
-class GreeterSpec extends FlatSpec with Matchers with PropertyChecks {
+class GreeterSpec extends AnyFlatSpec with Matchers with ScalaCheckDrivenPropertyChecks {
 
   it should "green genericly without a name" in {
     Greeter.greet shouldBe "Hello!"

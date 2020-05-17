@@ -1,9 +1,12 @@
 import sbt._
 
 object Dependencies {
-  lazy val scalaTest = "org.scalatest" %% "scalatest" % "$scalatest_version$" % Test
-  lazy val scalaCheck = "org.scalacheck" %% "scalacheck" % "$scalacheck_version$" % Test
-  lazy val cucumber = Seq(
+  lazy val tdd = Seq(
+    "org.scalatest" %% "scalatest" % "$scalatest_version$",
+    "org.scalatestplus" %% "scalacheck-1-14" % "$scalatest_scalacheck_version$",
+    "org.scalacheck" %% "scalacheck" % "$scalacheck_version$"
+  ).map(_ % Test)
+  lazy val bdd = Seq(
     "io.cucumber" % "cucumber-core",
     "io.cucumber" %% "cucumber-scala",
     "io.cucumber" % "cucumber-jvm",

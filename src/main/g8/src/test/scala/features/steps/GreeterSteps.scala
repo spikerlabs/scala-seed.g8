@@ -1,29 +1,25 @@
-package steps
+package features.steps
 
 import example.Greeter
+import features.state.GreeterState
 
-object RuntimeMemoryContext {
-  case class HelloWorldState(name: Option[String] = None, message: Option[String] = None)
-  var state: HelloWorldState = HelloWorldState()
-}
+trait GreeterSteps extends Steps {
 
-class RuntimeMemoryContext extends Context {
-
-  import RuntimeMemoryContext._
+  val state: GreeterState
 
   Given("""^my name is "([^"]*)"\$""") { name: String =>
-    state = state.copy(name = Some(name))
+    state.name(name)
   }
 
   When("""^I pass it to the greeter\$""") { () =>
     val name = state.name.get
     val message = Greeter.greet(name)
-    state = state.copy(message = Option(message))
+    state.message(message)
   }
 
   When("""^I run greeter without a name\$""") { () =>
     val message = Greeter.greet
-    state = state.copy(message = Option(message))
+    state.message(message)
   }
 
   Then("""^the greeter should have returned "([^"]*)"\$""") { expectedMessage: String =>
