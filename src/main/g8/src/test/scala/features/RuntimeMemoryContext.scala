@@ -5,7 +5,7 @@ import features.steps.GreeterSteps
 
 class RuntimeMemoryContext extends GreeterSteps {
 
-  val state: GreeterState = new GreeterState {
+  val state = new GreeterState {
 
     private var maybeName: Option[String] = None;
     def name(newName: String) = this.maybeName = Some(newName)
