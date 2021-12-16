@@ -18,11 +18,16 @@ brew install sbt
 
 ## How to set up
 
+It will install in sub directory (using the project name you choose.
+
+### Scala 2:
 ```bash
 sbt new spikerlabs/scala-seed.g8
 ```
-
-It will install in sub directory (using the project name you choose).
+### Scala 3 (experimental):
+```bash
+sbt new spikerlabs/scala-seed.g8 --branch 3
+```
 
 The template will ask number of questions about desired versions of things, normally you should be fine to use defaults.
 
