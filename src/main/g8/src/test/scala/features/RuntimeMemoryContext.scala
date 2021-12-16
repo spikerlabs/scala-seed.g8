@@ -3,9 +3,9 @@ package features
 import features.state.GreeterState
 import features.steps.GreeterSteps
 
-class RuntimeMemoryContext extends GreeterSteps {
+class RuntimeMemoryContext extends GreeterSteps:
 
-  val state = new GreeterState {
+  val state = new GreeterState:
 
     private var maybeName: Option[String] = None;
     def name(newName: String) = this.maybeName = Some(newName)
@@ -14,6 +14,3 @@ class RuntimeMemoryContext extends GreeterSteps {
     private var maybeMessage: Option[String] = None;
     def message(newMessage: String) = this.maybeMessage = Some(newMessage)
     def message: Option[String] = this.maybeMessage
-
-  }
-}

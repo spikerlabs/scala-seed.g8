@@ -5,7 +5,10 @@ import org.scalatest.matchers.should.Matchers
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 
-class GreeterSpec extends AnyFlatSpec with Matchers with ScalaCheckDrivenPropertyChecks {
+class GreeterSpec
+    extends AnyFlatSpec
+    with Matchers
+    with ScalaCheckDrivenPropertyChecks:
 
   it should "green genericly without a name" in {
     Greeter.greet shouldBe "Hello!"
@@ -20,5 +23,3 @@ class GreeterSpec extends AnyFlatSpec with Matchers with ScalaCheckDrivenPropert
       Greeter.greet(word) shouldBe s"Hello, \$word!"
     }
   }
-
-}

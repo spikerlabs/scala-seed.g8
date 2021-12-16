@@ -3,11 +3,11 @@ package features.steps
 import example.Greeter
 import features.state.GreeterState
 
-trait GreeterSteps extends Steps {
+trait GreeterSteps extends Steps:
 
   val state: GreeterState
 
-  Given("""^my name is "([^"]*)"\$""") { name: String =>
+  Given("""^my name is "([^"]*)"\$""") { (name: String) =>
     state.name(name)
   }
 
@@ -22,9 +22,8 @@ trait GreeterSteps extends Steps {
     state.message(message)
   }
 
-  Then("""^the greeter should have returned "([^"]*)"\$""") { expectedMessage: String =>
+  Then("""^the greeter should have returned "([^"]*)"\$""") { (expectedMessage: String) =>
     val returnedMessage = state.message.get
     returnedMessage shouldBe expectedMessage
   }
 
-}
